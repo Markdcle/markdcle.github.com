@@ -12,7 +12,7 @@
       <p><b>联系电话：18753126057</b></p>
     </td>
     <td width="25%">
-      <img src="tu.jpeg" width="500%">    
+      <img src="tu.jpeg" >    
     </td>
   </tr>
 </table>
