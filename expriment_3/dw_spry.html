@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Spry框架改</title>
+	<style>
+   	  	/*去除网页原有的格式*/
+		* { margin:0; padding:0;}
+		/*去除标签前的圆点*/
+		ul, li { list-style:none;}
+		/*去除下划线*/
+		a { text-decoration:none;}
+		/*盛放二级菜单的盒子*/
+		.mxl_bigbox_10{
+			width: 620px;
+			height:300px;
+			background-color:cornsilk;
+			margin: 15px auto auto  30%;
+			float:left;
+			position: relative;
+			padding-left:15px;
+			padding-top: 15px;
+		}
+		ul li{float:left; }
+		ul li a{
+			width:120px;
+			height:30px;
+			font-size: 20px;
+			text-align: center;
+			font-family: 宋体;
+			line-height: 25px;
+			/*将元素显示为块级元素display:block;*/
+			display: block;
+			border-right:2px solid silver;
+            border-bottom: 0.3px solid silver;
+            background-color: #E8E8E8;
+            color:black;
+		}
+		/*鼠标悬停改变背景颜色*/
+		ul li a:hover{background-color:plum; }
+		/*display:none;用来隐藏二级菜单  */
+		ul li ul{
+			position: absolute;
+			display:none;
+		}
+		/*float:none;使二级菜单不左右浮动也是默认值*/
+		ul li ul li{
+			float: none;
+		}
+		ul li ul li a{
+				border-top:1px dashed silver; 
+		}
+		/*在鼠标移到li上的时候它下面的ul会显示*/	
+		ul li:hover ul{display:block;}
+	</style>
+</head>
+<body>
+	<div  class="mxl_bigbox_10">
+			<ul>
+				<li><a href="#">首页</a>
+					<ul>
+						<li><a href="#">南京</a></li>
+						<li><a href="#">理工</a></li>
+						<li><a href="#">大学</a></li>
+					</ul>					
+				</li>
+				<li><a href="">报数栏目</a>
+					 <ul>						
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							</ul>
+				</li>
+				<li><a href="">专业概况</a>
+					<ul>
+						<li><a href="#">信息管理</a></li>
+						<li><a href="#">工商管理</a></li>
+						<li><a href="#">经济管理</a></li>
+					</ul>
+				</li>
+				<li><a href="">教学资源</a>
+					<ul>
+						<li><a href="#">资源1</a></li>
+						<li><a href="#">资源2</a></li>
+						<li><a href="#">资源3</a></li>
+						</ul>
+				</li>
+				<li><a href="">获奖状况</a>
+					<ul>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+					</ul>
+				</li>
+			</ul>
+	</div>
+</body>
+</html>
