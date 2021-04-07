@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>行为</title>
+<style>
+#late
+{
+font-family: arial;
+background-color:#915BD3;
+color:#C672EA;	
+text-align: left;
+font-size:7;
+<form></form>}
+</style>
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+</head>
+
+<body>
+<h1 id="late" onMouseDown="MM_goToURL('parent','www.baidu.com');return document.MM_returnValue" onMouseOver="MM_popupMsg('弹出了一条消息')">行为</h1>
+</body>
+</html>
