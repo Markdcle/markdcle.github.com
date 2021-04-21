@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面二</title>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+        </script>	
+		<script type="text/javascript">
+			$(function(){
+				$('#one').delegate('li','click',function(){
+					var index=$(this).index();
+					// console.log(index);
+					$(this).addClass('aa').siblings().removeClass('aa');
+					var html=$(this).html();
+					$('#two li').eq(index).html(html);
+					$('#two li').eq(index).addClass('current').siblings().removeClass('current');
+				})
+			})
+		</script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 450px;
+				height: 450px;
+				margin: 0 auto;
+			}
+			#one{
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+			#one li{
+				list-style: none;
+				width: 75px;
+				height: 45px;
+				line-height: 45px;
+				border: 1px solid red;
+				text-align: center;
+			}
+			#two{
+				width: 100%;
+				height: 200px;
+			}
+			#two li{
+				list-style: none;
+				width: 100%;
+				height: 100%;
+				border: 1px solid lightgray;
+				display: none;
+			}
+			#two .current{
+				display: block;
+			}
+			.aa{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul id="one">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<ul id="two">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
