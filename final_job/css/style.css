@@ -328,8 +328,7 @@ margin:0 auto;
 	height: 100vh;
 	/*background-image: url("../images/color3.gif")*/;
 	margin-top:20px;
-	padding-top:30px;
-	box-shadow:  0 0 6px #fff;	
+	padding-top:30px;	
 	opacity: 1
 }
 .container-detail p{
