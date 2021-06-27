@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+.animated {
+			-webkit-animation-duration: 5s;
+			animation-duration: 5s;  /*规定动画完成的时间*/
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;  /*前后的填充模式都被应用*/
+		}
+		.animated.infinite {
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite; /*无限次播放*/
+		}
+		@-webkit-keyframes fadeInUp { /*以百分比来规定改变发生的时间*/
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(0, 100%, 0);
+				transform: translate3d(0, 100%, 0)/*定义3d转换*/
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none
+			}
+		}
+		@keyframes fadeInUp {
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(0, 100%, 0);
+				-ms-transform: translate3d(0, 100%, 0);
+				transform: translate3d(0, 100%, 0)
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: none;
+				-ms-transform: none;
+				transform: none
+			}
+		}
+		.fadeInUp {
+			-webkit-animation-name: fadeInUp; /*规定绑定到keyframe的名称*/
+			animation-name: fadeInUp
+		}
