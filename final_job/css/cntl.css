@@ -1,0 +1,167 @@
+body {
+	font-family: Arial;
+}/*字体*/
+
+
+.cntl {
+	position: relative;/*相对于其正常位置进行定位*/
+	width: 100%;
+	overflow: hidden;/*内容会被修剪，溢出内容是不可见的*/
+}/*总的样式*/
+
+.cntl-center {
+	left:0;
+    right:0;/*不往左右*/
+    margin-left:auto;
+    margin-right:auto;/*边缘自动*/
+}/*中间*/
+
+.cntl-bar {
+	position: absolute;/*绝对定位*/
+	width: 10px;/*10个px*/
+	top: 0;
+	bottom: 0;
+	background-color: #ccc;
+	box-shadow: inset 0px 0px 7px -2px #000;/*设置阴影*/
+}/*中间一条线*/
+
+
+.cntl-bar-fill {
+	background-color:#797373;
+	position: absolute;
+	left:0;
+	right:0;
+	top:0;
+	height:0;
+
+}/*中间一条线*/
+.cntl-state {
+	position: relative;
+	width:100%;
+	min-height: 200px;/*元素的最小高度*/
+	margin-bottom: 50px;/*底部边缘*/
+}
+
+.cntl-state::after {
+	display:block;/*显示为块级元素*/
+	content: ' ';
+	clear:both;/*在左右两侧均不允许浮动元素*/
+}
+
+.cntl-icon {
+	border-radius: 50%;/*圆角边框*/
+	width: 80px;
+	height: 80px;
+	background-color: #00313C;
+	border: solid 3px #009ABB;
+	box-shadow: 0px 0px 19px -9px #000;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	line-height: 80px;
+	font-size: 40px;
+	color: #fff;
+}
+
+.cntl-content {
+	font-size: 20px;
+	width: 40%;
+	padding: 2%;/*基于父元素的宽度的百分比的内边距*/
+	background-color: rgba(238, 238, 238, 0.25);/*颜色函数*/
+	border-radius: 8px;/*圆角边框*/
+	border-bottom: solid 3px #009ABB;
+	float:left;/*浮动方向*/
+	opacity:0;/*透明度*/
+	position:relative;
+	margin-left:-40%;
+}/*文字内容*/
+
+.cntl-state:nth-child(2n+2) .cntl-content {
+	float:right;
+	margin-right:-40%;
+}/*偶数的state内容右边过来*/
+
+.cntl-image {
+	opacity:0;
+	width: 40%;
+	padding: 2%;/*基于父元素的宽度的百分比的内边距*/
+	float:left;/*浮动方向*/
+}
+
+.cntl-state:nth-child(2n+1) .cntl-image {
+	float:right;
+}/*奇数的state图片右边过来*/
+
+.cntl-image img {
+	width:100%;
+}
+
+.cntl-content h4 {
+	font-weight: bold;
+	font-size:45px;
+	margin-bottom: 10px;
+}/*h4的样式*/
+
+
+/*
+animations
+*/
+.cntl-bar-fill,.cntl-content,.cntl-image {
+	-webkit-transition: all 500ms ease;/*谷歌浏览器厂商前缀*/
+	-moz-transition: all 500ms ease;/*火狐浏览器厂商前缀*/
+	-o-transition: all 500ms ease;/*opera浏览器厂商前缀*/
+	transition: all 500ms ease;/*所有属性渐变500ms*/
+}
+
+.cntl-state:nth-child(2n+2).cntl-animate .cntl-content {
+	margin-right:0%;
+}
+
+.cntl-animate .cntl-content {
+	opacity:1;
+	margin-left:0%;
+}/*与jQuery联动*/
+
+.cntl-animate .cntl-image {
+	opacity:1;
+}/*与jQuery联动*/
+
+
+
+
+/* mobile support */
+
+@media (max-width: 600px) {/*定义输出设备中的页面最大可见区域宽度*/
+
+	.cntl-bar {
+		left:auto;
+		right: 37px;
+	}
+
+	.cntl-content {
+		width:80%;
+		float:none;
+	}
+	.cntl-state:nth-child(2n+2) .cntl-content {
+		margi-right:0%;
+		float:none;
+	}
+
+	.cntl-image {
+		width:80%;
+	}
+
+	.cntl-state:nth-child(2n+1) .cntl-image {
+		float:none;
+	}
+
+	.animate .cntl-content {
+		margin-left: 2%;
+	}
+
+	.cntl-icon {
+		left: auto;
+		right: 0;
+	}
+
+}
