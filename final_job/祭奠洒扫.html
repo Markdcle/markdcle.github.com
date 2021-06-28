@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>致敬抗疫英雄，缅怀疫情逝者</title>
+	<link rel="stylesheet" href="css/文字跳动.css" type="text/css">
+	<link rel="stylesheet" href="css/固定滚动条.css" type="text/css">
+</head>
+	
+<body>
+	<!--气泡-->
+	<div id="qp"></div>
+	<script type="application/javascript">
+        (function () {
+            var a_idx = 0;
+            window.onclick = function (event) {
+                var a = new Array("❀抗击疫情❀", "❀他们是这个时代最可爱的人❀", "❀逝者安息❀", "❀向英雄致敬❀", "❀天佑中华❀", "❀中国加油❀", "❀缅怀逝者❀", "❀铭记英雄❀");			
+                var heart = document.createElement("b"); //创建b元素
+                heart.onselectstart = new Function('event.returnValue=false'); //防止拖动
+                document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加到页面上
+                a_idx = (a_idx + 1) % a.length;
+                heart.style.cssText = "position: fixed;left:-100%;"; //给p元素设置样式
+                var f = 50, // 字体大小
+                    x = event.clientX - f / 2, // 横坐标
+                    y = event.clientY - f, // 纵坐标
+                    c = randomColor(), // 随机颜色
+                    a = 1, // 透明度
+                    s = 1.2; // 放大缩小
+                var timer = setInterval(function () { //添加定时器
+                    if (a <= 0) {
+                        document.body.removeChild(heart);
+                        clearInterval(timer);
+                    } else {
+                        heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                            c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                            s + ");";
+                        y--;
+                        a -= 0.003;
+                        s += 0.002;
+                    }
+                }, 15)
+            }
+            // 随机颜色
+            function randomColor() {
+                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+            }
+        }());
+    </script>
+	
+	<!--背景图片拉伸-->
+	<img alt="" src ="images/1.jpeg"  border = "0" width = "80%" height = "100%" style = "position: absolute; left:150px;bottom:0px; z-index: -1">
+	
+	<!-- 固定滚动条 -->
+    <marquee behavior="scroll" direction="right" onMouseOut="this.start()" onMouseOver="this.stop()">
+		<div id="gd">
+			<span class="font1">祭奠洒扫，缅怀逝者</span>
+		</div>
+    </marquee>
+	
+	<!--文字跳动-->
+	<div id="bigbox">
+		<span class="font2">点图片试试</span>
+		<img alt="" src ="images/4.png" width = "10%" height = "10%">
+	</div>
+</body>
+</html>
