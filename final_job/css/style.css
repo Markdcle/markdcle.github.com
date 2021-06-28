@@ -44,6 +44,7 @@ body a{
 	border-bottom:3px solid #5094F2;
 	color:#5094F2;
 }
+
 .banner-background{
 		z-index: 1;
 	height: 800px;
@@ -122,6 +123,9 @@ body a{
 
 .probootstrap-section.probootstrap-section-dark {
 	background: #333
+}
+.probootstrap-section.probootstrap-section-black{
+	background:#222
 }
 
 .probootstrap-section.probootstrap-bg-white {
@@ -321,11 +325,9 @@ margin:0 auto;
 	opacity: 1	
 }
 .container-detail{
-	height: 100vh;
 	/*background-image: url("../images/color3.gif")*/;
 	margin-top:20px;
 	padding-top:30px;
-	box-shadow:  0 0 6px 6px #fff;	
 	opacity: 1
 }
 .container-detail p{
@@ -349,69 +351,66 @@ margin:0 auto;
 	text-indent: 2em;
 	opacity: 1	
 }
- .box, .box img {
-	position: absolute;
-	height: 390px;
-	width: 600px;
-	left: 1px;
-	top: -5px;
-            }
-            .circle {
-                width: 200px;
-                height: 14px;
-                position: absolute;
-                bottom: 15px;
-                left: 50%;
-                margin-left: -100px;
-                text-align: center;
-                cursor: pointer;
-            }
-            .circle b {
-                display: inline-block;
-                width: 14px;
-                height: 14px;
-                background-color: #000;
-                border-radius: 50%;
-                margin: 3px;
-            }
-            .circle .current {
-                background-color: #fff;
-            }
-            .btn {
-                position: absolute;
-                top: 50%;
-                width: 40px;
-                height: 50px;
-                margin-top: -25px;
-                background-color: rgba(255, 255, 255, .7);
-                text-align: center;
-                line-height: 40px;
-                font-size: 50px;
-                cursor: pointer;
-            }
-            .left {
-                left: 0;
-            }
-            .right {
-                right: 0;
-            }
-.title{
-	letter-spacing: 15px;
-	position: absolute;
-	left: 977px;
-	top: 189px;
-	font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-	width: 500px;
-	height: 116px;
-	font-size: 36px;
-	font: bold 65px helvetica, arial, sans-serif;
-	color: #000;        /*字体设为红色*/
-	text-shadow: 0 0 4px white,    /*第一层阴影为白色*/
-        0 -5px 4px #ff3,     /*第二层阴影为黄色*/
-        2px -10px 6px #fd3,     /*第三层阴影为浅橙色*/
-        -2px -15px 11px #CCCC33,     /*第四层阴影为深橙色*/
-        2px -25px 18px #CCCC66;    /*最后一层阴影为红色，扩散效果设置较明显*/
-	 
+#container {
+
+width: 400px;
+
+height: 300px;
+
+overflow: hidden;
+
+}
+
+#photo {
+
+width: 1200px;
+
+animation: switch 5s ease-out infinite;
+
+}
+
+#photo > img {
+
+float: left;
+
+width: 400px;
+
+height: 300px;
+
+}
+
+@keyframes switch {
+
+0%, 25% {
+
+margin-left: 0;
+
+}
+
+35%, 60% {
+
+margin-left: -400px;
+
+}
+
+70%, 100% {
+
+margin-left: -800px;
+
+} 	 
+}
+ .text h3 {
+	color: #fff;
+	line-height: 30px;
+	font-size: 30px;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+	font-weight: 700
+}
+.text p {
+	font-size: 18px;
+	color: rgba(255,255,255,.5);
+	line-height: 1.5
 }
 i.tick {
 	width: 25px;
